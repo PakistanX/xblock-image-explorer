@@ -266,7 +266,7 @@ class ImageExplorerBlock(XBlock):  # pylint: disable=no-init
 
     def _get_unique_id(self):
         try:
-            unique_id = self.location.name
+            unique_id = self.location.html_id()
         except AttributeError:
             # workaround for xblock workbench
             unique_id = 'workbench-workaround-id'
@@ -333,7 +333,7 @@ class ImageExplorerBlock(XBlock):  # pylint: disable=no-init
         if not url:
             return url
         try:
-            from static_replace import replace_static_urls
+            from common.djangoapps.static_replace import replace_static_urls
         except ImportError:
             return url
 

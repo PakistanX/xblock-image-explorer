@@ -4,3 +4,5 @@ xblock_image_explorer.egg-info
 var/workbench.log*
 geckodriver.log
 .tox
+
+.idea/
