@@ -131,8 +131,8 @@ button.image-explorer-hotspot .image-explorer-hotspot-reveal .image-explorer-hot
 @media only screen and (max-width: 767px){
     .image-explorer-wrapper button.image-explorer-hotspot{
         background-size: 100%;
-        width: 16px;
-        height: 16px;
+        /* width: 16px;
+        height: 16px; */
     }
     .image-explorer-wrapper button.image-explorer-hotspot:hover{
         background-position: 0 -17px;
@@ -151,10 +151,10 @@ button.image-explorer-hotspot .image-explorer-hotspot-reveal .image-explorer-hot
     .image-explorer-hotspot-reveal iframe{
         width: 100% !important;
     }
-    .image-explorer-hotspot.centered{ /* offset for hotspot to restrict it to its center */
+    /* .image-explorer-hotspot.centered{ offset for hotspot to restrict it to its center
         margin-left: -8px;
         margin-top: -8px;
-    }
+    } */
 }
 
 
