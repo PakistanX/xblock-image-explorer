@@ -50,6 +50,9 @@
     -webkit-transition: all 0.0s linear 0s;
     -moz-transition: all 0.0s linear 0s;
     transition: all 0.0s linear 0s;
+    /* ilmX: neutralise LMS/theme button chrome on hotspots */
+    outline: none;
+    box-shadow: none;
 }
 
 .image-explorer-wrapper button.image-explorer-hotspot > span{ display: none;}
@@ -102,6 +105,18 @@ button.image-explorer-hotspot .image-explorer-hotspot-reveal .image-explorer-hot
     position: absolute;
     top: 0;
     right: 0;
+    /* ilmX: neutralise LMS/theme button chrome on the close button */
+    box-shadow: none;
+    outline: none;
+}
+
+/* ilmX: keep the close button flat on hover/active (theme buttons add a background) */
+.image-explorer-close-reveal:hover,
+.image-explorer-close-reveal:active {
+    box-shadow: none !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
 }
 
 .codemirror-editor-wrapper {
@@ -116,13 +131,12 @@ button.image-explorer-hotspot .image-explorer-hotspot-reveal .image-explorer-hot
 }
 
 @media only screen and (max-width: 767px){
+    /* ilmX: keep full-size (41px) hotspots on small screens so they stay tappable */
     .image-explorer-wrapper button.image-explorer-hotspot{
         background-size: 100%;
-        width: 16px;
-        height: 16px;
     }
     .image-explorer-wrapper button.image-explorer-hotspot:hover{
-        background-position: 0 -17px;
+        background-position: 0 100%;
     }
     .image-explorer-hotspot-reveal{
         right: 0;
@@ -138,10 +152,7 @@ button.image-explorer-hotspot .image-explorer-hotspot-reveal .image-explorer-hot
     .image-explorer-hotspot-reveal iframe{
         width: 100% !important;
     }
-    .image-explorer-hotspot.centered{ /* offset for hotspot to restrict it to its center */
-        margin-left: -8px;
-        margin-top: -8px;
-    }
+    /* ilmX: hotspots keep their desktop size, so the desktop -20.5px centring offset applies */
 }
 
 

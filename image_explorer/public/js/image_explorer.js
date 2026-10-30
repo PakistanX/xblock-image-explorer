@@ -1,5 +1,13 @@
 function applyHotspotButtonStyle(element, data) {
-   $(".image-explorer-wrapper button.image-explorer-hotspot", element).css("background", "url("+data['hotspot_image']+") no-repeat scroll 0 0 rgba(0, 0, 0, 0)");
+   // ilmX: set the sprite with !important priority so LMS/theme button styles
+   // (which use !important backgrounds) cannot hide the hotspot sprite.
+   // Only background-image/repeat/color are forced, so the :hover/.visited
+   // background-position rules in image_explorer.css keep working.
+   $(".image-explorer-wrapper button.image-explorer-hotspot", element).each(function() {
+       this.style.setProperty("background-image", "url(" + data['hotspot_image'] + ")", "important");
+       this.style.setProperty("background-repeat", "no-repeat", "important");
+       this.style.setProperty("background-color", "transparent", "important");
+   });
 }
 
 function ImageExplorerBlock(runtime, element, data) {
